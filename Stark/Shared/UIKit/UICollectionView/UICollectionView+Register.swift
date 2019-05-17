@@ -23,5 +23,28 @@ extension UICollectionView {
     func dequeueReusableCell<T: UICollectionViewCell>(type: T.Type, forIndexPath indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: type.defaultReuseIdentifier, for: indexPath) as! T
     }
+
+    /// Convenience function to register supplemetary view from class.
+    ///
+    /// - parameter class:       The class type to register. e.g. `MySupplementaryViewClass.self`
+    /// - parameter elementKind: The kind of supplementary view to locate.
+    func register(nib: Reuseable.Type, ofKind elementKind: String, bundle: Bundle? = nil) {
+        register(UINib(nibName: classNameFromType(nib), bundle: bundle), forSupplementaryViewOfKind: elementKind, withReuseIdentifier: nib.defaultReuseIdentifier)
+    }
+
+
+    /// Convenience function to unwrap the cell using the defaultReuseIdentifier available on `UICollectionViewCell`.
+    ///
+    /// - parameter elementKind: The kind of supplementary view to locate.
+    /// - parameter type:        The class type, must be a subclass of `UICollectionViewReusableView`
+    /// - parameter indexPath:   The currrent indexPath to query the collection view cache
+    ///
+    /// - returns: This method always returns a valid supplementary view.
+    func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind elementKind: String, type: T.Type, forIndexPath indexPath: IndexPath) -> T {
+        // swiftlint:disable force_cast
+        return dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: type.defaultReuseIdentifier, for: indexPath) as! T
+        // swiftlint:enable force_cast
+    }
+
     
 }

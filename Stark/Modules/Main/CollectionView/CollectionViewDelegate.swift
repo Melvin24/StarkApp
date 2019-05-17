@@ -15,7 +15,8 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     let interItemSpacing: CGFloat = 4
     let numberOfItemsPerRowPortrait: CGFloat = 2
     let numberOfItemsPerRowLandscape: CGFloat = 3
-    let sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 4, right: 4)
+    let sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+    let sectionHeaderHeight: CGFloat = 30
 
     /// Current device, used to check for orientation.
     var device = UIDevice.current
@@ -38,25 +39,60 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 80)
 
-        let maxContentWidth = viewController.view.frame.width
+    }
 
-        let availableContentWidth = maxContentWidth - (sectionInset.left + sectionInset.right + interItemSpacing)
-
-        guard availableContentWidth > 0 else {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
             return .zero
+        } else {
+            return CGSize(width: viewController.view.frame.width, height: sectionHeaderHeight)
         }
-
-        let itemsPerRow = device.orientation.isLandscape ? numberOfItemsPerRowLandscape : numberOfItemsPerRowPortrait
-
-        let maxWidthAndHeightPerItem = availableContentWidth/itemsPerRow
-
-        return CGSize(width: maxWidthAndHeightPerItem, height: maxWidthAndHeightPerItem)
-
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        guard let jobs = viewController.presenter.jobs,
+            let jobCollectionViewCell = cell as? JobCollectionViewCell else {
+            return
+        }
+
+        let job: Jobs.Job
+
+        switch indexPath.section {
+        case 0:
+            job = jobs.master
+
+        case 1:
+            job = jobs.pullRequests[indexPath.row]
+
+        case 2:
+            job = jobs.releases[indexPath.row]
+
+        default:
+            return
+
+        }
+
+        if job.status == .building {
+            jobCollectionViewCell.animateStatusView()
+        } else {
+            jobCollectionViewCell.removeStatusViewAnimation()
+        }
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let jobCollectionViewCell = cell as? JobCollectionViewCell else {
+                return
+        }
+
+        jobCollectionViewCell.removeStatusViewAnimation()
     }
 
 }

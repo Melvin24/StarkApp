@@ -18,6 +18,8 @@
 		E1760684228EC33F00C59587 /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1760683228EC33F00C59587 /* MainViewControllerFactory.swift */; };
 		E1760687228EC70D00C59587 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */; };
 		E1760689228EC71400C59587 /* JobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1760688228EC71400C59587 /* JobCollectionViewCell.xib */; };
+		E176068B228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */; };
+		E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */; };
 		E1A42398228B37B70069774A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42397228B37B70069774A /* AppDelegate.swift */; };
 		E1A4239A228B37B70069774A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42399228B37B70069774A /* ViewController.swift */; };
 		E1A4239D228B37B70069774A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4239B228B37B70069774A /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		E1760683228EC33F00C59587 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
 		E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1760688228EC71400C59587 /* JobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobCollectionViewCell.xib; sourceTree = "<group>"; };
+		E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		E1A42394228B37B70069774A /* Stark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A42397228B37B70069774A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A42399228B37B70069774A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 			children = (
 				E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */,
 				E1760688228EC71400C59587 /* JobCollectionViewCell.xib */,
+				E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */,
+				E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +531,7 @@
 			files = (
 				E1A423A2228B37BA0069774A /* LaunchScreen.storyboard in Resources */,
 				E1A423D8228B4B7C0069774A /* MainStoryboard.storyboard in Resources */,
+				E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */,
 				E1A4239D228B37B70069774A /* Main.storyboard in Resources */,
 				E1A4240C228B4DA30069774A /* LoadingView.xib in Resources */,
 				E1A4240D228B4DA30069774A /* ErrorView.xib in Resources */,
@@ -556,6 +563,7 @@
 				E1760684228EC33F00C59587 /* MainViewControllerFactory.swift in Sources */,
 				E1A42421228B4DA30069774A /* Coordinatable.swift in Sources */,
 				E1A423C3228B38850069774A /* TaskResult.swift in Sources */,
+				E176068B228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift in Sources */,
 				E1A42423228B4DA30069774A /* Presenter.swift in Sources */,
 				E1A4240A228B4DA30069774A /* Functions.swift in Sources */,
 				E1A42416228B4DA30069774A /* UIView+Initialize.swift in Sources */,

@@ -12,19 +12,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vnI-5y-rhg" customClass="JobCollectionViewCell" customModule="Stark" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="907" height="182"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="vnI-5y-rhg" customClass="JobCollectionViewCell" customModule="Stark" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1272" height="357"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="907" height="182"/>
+                <rect key="frame" x="0.0" y="0.0" width="1272" height="357"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-bm-Lnq">
-                        <rect key="frame" x="0.0" y="0.0" width="907" height="182"/>
+                        <rect key="frame" x="4" y="58.5" width="250" height="250"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="9fm-bm-Lnq" secondAttribute="height" multiplier="1:1" id="Xzh-qn-EQ4"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0Y-Bc-jef">
-                        <rect key="frame" x="414.5" y="86" width="78" height="20.5"/>
+                        <rect key="frame" x="264" y="173.5" width="78" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,20 +35,19 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9fm-bm-Lnq" secondAttribute="trailing" id="5s3-T9-1Xz"/>
-                <constraint firstItem="x0Y-Bc-jef" firstAttribute="centerX" secondItem="vnI-5y-rhg" secondAttribute="centerX" id="8Qg-Bb-aaM"/>
-                <constraint firstItem="9fm-bm-Lnq" firstAttribute="leading" secondItem="vnI-5y-rhg" secondAttribute="leading" id="Ehs-X7-43R"/>
-                <constraint firstAttribute="bottom" secondItem="9fm-bm-Lnq" secondAttribute="bottom" id="FLc-MM-5Le"/>
-                <constraint firstItem="x0Y-Bc-jef" firstAttribute="centerY" secondItem="vnI-5y-rhg" secondAttribute="centerY" constant="5.25" id="mAh-ej-r0K"/>
-                <constraint firstItem="9fm-bm-Lnq" firstAttribute="top" secondItem="vnI-5y-rhg" secondAttribute="top" id="t4X-cG-gXf"/>
+                <constraint firstItem="9fm-bm-Lnq" firstAttribute="leading" secondItem="cId-6x-zUz" secondAttribute="leading" constant="4" id="EyX-dO-WVa"/>
+                <constraint firstItem="x0Y-Bc-jef" firstAttribute="leading" secondItem="9fm-bm-Lnq" secondAttribute="trailing" constant="10" id="O8r-4A-Ac0"/>
+                <constraint firstItem="x0Y-Bc-jef" firstAttribute="centerY" secondItem="cId-6x-zUz" secondAttribute="centerY" id="Oy6-dV-Pm5"/>
+                <constraint firstItem="9fm-bm-Lnq" firstAttribute="centerY" secondItem="cId-6x-zUz" secondAttribute="centerY" id="sfW-57-KDa"/>
+                <constraint firstItem="9fm-bm-Lnq" firstAttribute="height" secondItem="vnI-5y-rhg" secondAttribute="height" multiplier="0.7" id="wj4-cZ-d1I"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="cId-6x-zUz"/>
-            <size key="customSize" width="907" height="182"/>
+            <size key="customSize" width="1272" height="357"/>
             <connections>
                 <outlet property="jobNameLabel" destination="x0Y-Bc-jef" id="hA4-BD-b9K"/>
                 <outlet property="statusView" destination="9fm-bm-Lnq" id="iio-uQ-YIR"/>
             </connections>
-            <point key="canvasLocation" x="738" y="-439"/>
+            <point key="canvasLocation" x="1001.4492753623189" y="-380.69196428571428"/>
         </collectionViewCell>
     </objects>
 </document>

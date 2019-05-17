@@ -26,6 +26,7 @@ class MainViewController: UIViewController, PresenterInteractor, StatusViewPrese
         setupRefreshController(forCollectionView: collectionView)
 
         collectionView.register(nib: JobCollectionViewCell.self)
+        collectionView.register(nib: JobHeaderCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
 
         presenter.loadIfRequired()
 
