@@ -20,9 +20,11 @@
 		E1760689228EC71400C59587 /* JobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1760688228EC71400C59587 /* JobCollectionViewCell.xib */; };
 		E176068B228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */; };
 		E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */; };
+		E17606DB22901FDE00C59587 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606DA22901FDE00C59587 /* Colors.swift */; };
+		E17606FB2290250E00C59587 /* MasterJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */; };
+		E17606FD2290251D00C59587 /* MasterJobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */; };
+		E17606FF2290907400C59587 /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606FE2290907400C59587 /* JobsViewModel.swift */; };
 		E1A42398228B37B70069774A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42397228B37B70069774A /* AppDelegate.swift */; };
-		E1A4239A228B37B70069774A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42399228B37B70069774A /* ViewController.swift */; };
-		E1A4239D228B37B70069774A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4239B228B37B70069774A /* Main.storyboard */; };
 		E1A423A2228B37BA0069774A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A423A0228B37BA0069774A /* LaunchScreen.storyboard */; };
 		E1A423AD228B37BB0069774A /* StarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A423AC228B37BB0069774A /* StarkTests.swift */; };
 		E1A423C1228B38850069774A /* BlockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A423B9228B38850069774A /* BlockTask.swift */; };
@@ -79,10 +81,12 @@
 		E1760688228EC71400C59587 /* JobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobCollectionViewCell.xib; sourceTree = "<group>"; };
 		E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		E17606DA22901FDE00C59587 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterJobCollectionViewCell.swift; sourceTree = "<group>"; };
+		E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterJobCollectionViewCell.xib; sourceTree = "<group>"; };
+		E17606FE2290907400C59587 /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
 		E1A42394228B37B70069774A /* Stark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A42397228B37B70069774A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1A42399228B37B70069774A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E1A4239C228B37B70069774A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1A423A1228B37BA0069774A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A423A8228B37BB0069774A /* StarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A423AC228B37BB0069774A /* StarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarkTests.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E1760672228EBDA000C59587 /* Jobs.swift */,
+				E17606FE2290907400C59587 /* JobsViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +189,8 @@
 				E1760688228EC71400C59587 /* JobCollectionViewCell.xib */,
 				E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */,
 				E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */,
+				E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */,
+				E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,8 +221,6 @@
 				E1A423C9228B38EC0069774A /* Resource */,
 				E1A423C8228B38C30069774A /* Shared */,
 				E1A42397228B37B70069774A /* AppDelegate.swift */,
-				E1A42399228B37B70069774A /* ViewController.swift */,
-				E1A4239B228B37B70069774A /* Main.storyboard */,
 				E1A423A0228B37BA0069774A /* LaunchScreen.storyboard */,
 			);
 			path = Stark;
@@ -429,6 +434,7 @@
 		E1A423F4228B4DA30069774A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E17606DA22901FDE00C59587 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -532,10 +538,10 @@
 				E1A423A2228B37BA0069774A /* LaunchScreen.storyboard in Resources */,
 				E1A423D8228B4B7C0069774A /* MainStoryboard.storyboard in Resources */,
 				E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */,
-				E1A4239D228B37B70069774A /* Main.storyboard in Resources */,
 				E1A4240C228B4DA30069774A /* LoadingView.xib in Resources */,
 				E1A4240D228B4DA30069774A /* ErrorView.xib in Resources */,
 				E1760689228EC71400C59587 /* JobCollectionViewCell.xib in Resources */,
+				E17606FD2290251D00C59587 /* MasterJobCollectionViewCell.xib in Resources */,
 				E1A423CD228B39210069774A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,8 +582,9 @@
 				E1A423C5228B38850069774A /* CanPerformJobs.swift in Sources */,
 				E1760687228EC70D00C59587 /* JobCollectionViewCell.swift in Sources */,
 				E1A423C2228B38850069774A /* Waterfall.swift in Sources */,
+				E17606FB2290250E00C59587 /* MasterJobCollectionViewCell.swift in Sources */,
 				E1760681228EC1B000C59587 /* CollectionViewDataSource.swift in Sources */,
-				E1A4239A228B37B70069774A /* ViewController.swift in Sources */,
+				E17606FF2290907400C59587 /* JobsViewModel.swift in Sources */,
 				E176067F228EC1A700C59587 /* CollectionViewDelegate.swift in Sources */,
 				E176066D228EBC7100C59587 /* MainInteractor.swift in Sources */,
 				E1A423D6228B3D9A0069774A /* MainViewController.swift in Sources */,
@@ -585,6 +592,7 @@
 				E1A423C1228B38850069774A /* BlockTask.swift in Sources */,
 				E1A4240F228B4DA30069774A /* ErrorView.swift in Sources */,
 				E1A42398228B37B70069774A /* AppDelegate.swift in Sources */,
+				E17606DB22901FDE00C59587 /* Colors.swift in Sources */,
 				E1A4242B228B4FD80069774A /* MainPresenter.swift in Sources */,
 				E1760673228EBDA000C59587 /* Jobs.swift in Sources */,
 				E1760678228EBF5B00C59587 /* MainPresenter+Helper.swift in Sources */,
@@ -613,14 +621,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E1A4239B228B37B70069774A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1A4239C228B37B70069774A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E1A423A0228B37BA0069774A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

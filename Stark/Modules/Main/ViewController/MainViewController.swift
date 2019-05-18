@@ -23,12 +23,16 @@ class MainViewController: UIViewController, PresenterInteractor, StatusViewPrese
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.backgroundColor = Colors.collectionViewBackground
         setupRefreshController(forCollectionView: collectionView)
 
         collectionView.register(nib: JobCollectionViewCell.self)
+        collectionView.register(nib: MasterJobCollectionViewCell.self)
         collectionView.register(nib: JobHeaderCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
 
         presenter.loadIfRequired()
+
+        self.title = "Builds"
 
     }
 

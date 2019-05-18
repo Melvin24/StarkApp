@@ -50,18 +50,18 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        let cell = collectionView.dequeueReusableCell(type: JobCollectionViewCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(type: MasterJobCollectionViewCell.self, forIndexPath: indexPath)
 
         if indexPath.section == 0 {
-            cell.jobNameLabel.text = jobs.master.name
+            cell.statusView.backgroundColor = jobs.master.statusColor
             setupCell(cell, forJob: jobs.master)
 
         } else if indexPath.section == 1 {
-            cell.jobNameLabel.text = jobs.pullRequests[indexPath.row].name
+            cell.statusView.backgroundColor = .white
             setupCell(cell, forJob: jobs.pullRequests[indexPath.row])
 
         } else if indexPath.section == 2 {
-            cell.jobNameLabel.text = jobs.releases[indexPath.row].name
+            cell.statusView.backgroundColor = .white
             setupCell(cell, forJob: jobs.releases[indexPath.row])
 
         }
@@ -99,39 +99,12 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     }
 
-    func setupCell(_ cell: JobCollectionViewCell, forJob job: Jobs.Job) {
+    func setupCell(_ cell: MasterJobCollectionViewCell, forJob job: JobsViewModel.JobViewModel) {
 
-//        let circleView = UIView()// (frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-//
-//        circleView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        circleView.layer.cornerRadius = view.frame.width/2
-
-
-        switch job.status {
-        case .building:
-            cell.statusView.backgroundColor = UIColor(red:0.82, green:0.83, blue:0.86, alpha:1.0) // lightGrey
-        case .failed:
-            cell.statusView.backgroundColor = UIColor(red:0.65, green:0.07, blue:0.07, alpha:1.0)
-
-        case .success:
-            cell.statusView.backgroundColor = UIColor(red:0.05, green:0.52, blue:0.15, alpha:1.0)
-
-        case .unknown:
-            cell.statusView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:1.0) // black
-
-        }
-
-//        view.addSubview(circleView)
-//
-//        NSLayoutConstraint.activate([
-//            circleView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            circleView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            circleView.topAnchor.constraint(equalTo: view.topAnchor),
-//            circleView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//        ])
-
+        cell.jobNameLabel.text = job.name
+        cell.pulsingView.backgroundColor = job.statusColor
 
     }
+
 }
 

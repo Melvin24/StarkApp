@@ -58,11 +58,11 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
         guard let jobs = viewController.presenter.jobs,
-            let jobCollectionViewCell = cell as? JobCollectionViewCell else {
+            let masterCell = cell as? MasterJobCollectionViewCell else {
             return
         }
 
-        let job: Jobs.Job
+        let job: JobsViewModel.JobViewModel
 
         switch indexPath.section {
         case 0:
@@ -79,20 +79,20 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
 
         }
 
-        if job.status == .building {
-            jobCollectionViewCell.animateStatusView()
+        if job.shouldAnimateStatus {
+            masterCell.animatePulsingView()
         } else {
-            jobCollectionViewCell.removeStatusViewAnimation()
+            masterCell.removePulsingViewAnimation()
         }
 
     }
 
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let jobCollectionViewCell = cell as? JobCollectionViewCell else {
+        guard let masterCell = cell as? MasterJobCollectionViewCell else {
                 return
         }
 
-        jobCollectionViewCell.removeStatusViewAnimation()
+        masterCell.removePulsingViewAnimation()
     }
 
 }

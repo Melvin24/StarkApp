@@ -22,7 +22,7 @@ extension MainPresenter {
     /// - Returns: An Error View with appropriate label text.
     func noDataView() -> UIView {
         let errorView = errorStatusView()
-        errorView.label.text = "No data"
+        errorView.label.text = "No response"
         errorView.onRetryButtonSelect = self.viewController?.reload
 
         return errorView
@@ -58,9 +58,9 @@ extension MainPresenter {
 
         switch error {
         case .noData:
-            return "No data"
+            return "No response"
         case .unableToParseData:
-            return "Invalid data from API"
+            return "Invalid response from API"
         }
     }
 

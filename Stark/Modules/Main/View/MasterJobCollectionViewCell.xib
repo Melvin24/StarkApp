@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tFi-CT-4Yx" customClass="MasterJobCollectionViewCell" customModule="Stark" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="431" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="431" height="86"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFk-EJ-C3u">
+                        <rect key="frame" x="0.0" y="0.0" width="431" height="86"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn0-ea-rfG">
+                        <rect key="frame" x="194" y="33" width="43.5" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1q3-by-lE3">
+                        <rect key="frame" x="10" y="10" width="20" height="20"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="1q3-by-lE3" secondAttribute="height" multiplier="1:1" id="llM-pm-7Cb"/>
+                            <constraint firstAttribute="width" constant="20" id="uLc-rG-en5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="1q3-by-lE3" firstAttribute="leading" secondItem="tFi-CT-4Yx" secondAttribute="leading" constant="10" id="1JH-om-CgT"/>
+                <constraint firstAttribute="top" secondItem="WFk-EJ-C3u" secondAttribute="top" id="5yO-7h-AhU"/>
+                <constraint firstAttribute="top" secondItem="1q3-by-lE3" secondAttribute="top" constant="-10" id="CTA-x9-TWt"/>
+                <constraint firstAttribute="trailing" secondItem="WFk-EJ-C3u" secondAttribute="trailing" id="KOx-Oe-OHL"/>
+                <constraint firstItem="Pn0-ea-rfG" firstAttribute="centerY" secondItem="tFi-CT-4Yx" secondAttribute="centerY" id="VUC-wl-PGV"/>
+                <constraint firstItem="WFk-EJ-C3u" firstAttribute="leading" secondItem="tFi-CT-4Yx" secondAttribute="leading" id="jqS-DH-fXQ"/>
+                <constraint firstItem="Pn0-ea-rfG" firstAttribute="centerX" secondItem="tFi-CT-4Yx" secondAttribute="centerX" id="mh2-hH-44I"/>
+                <constraint firstItem="WFk-EJ-C3u" firstAttribute="bottom" secondItem="tFi-CT-4Yx" secondAttribute="bottom" id="rzW-SQ-4bn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="S6F-ub-Shc"/>
+            <size key="customSize" width="431" height="86"/>
+            <connections>
+                <outlet property="jobNameLabel" destination="Pn0-ea-rfG" id="pUj-BU-vcs"/>
+                <outlet property="pulsingView" destination="1q3-by-lE3" id="puZ-4J-jKB"/>
+                <outlet property="statusView" destination="WFk-EJ-C3u" id="f2E-uq-Eed"/>
+            </connections>
+            <point key="canvasLocation" x="-44.20289855072464" y="228.34821428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

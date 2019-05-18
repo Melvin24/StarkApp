@@ -11,7 +11,7 @@ import Foundation
 /// Responsible for performing Network request to fetch fruit data.
 class JobsNetworkService {
 
-    var URLPath = "http://localhost:8080/api/ios/jobs"
+    var URLPath = "https://api.myjson.com/bins/79yum" //http://localhost:8080/api/ios/jobs"
 
     /// Network Error
     enum JobsNetworkingError: Error {

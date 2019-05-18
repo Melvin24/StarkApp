@@ -10,14 +10,15 @@ import Foundation
 
 struct Jobs: Decodable {
 
-    enum Status: String, Decodable {
-        case success
-        case failed
-        case building
-        case unknown
-    }
-
     struct Job: Decodable {
+
+        enum Status: String, Decodable {
+            case success
+            case failed
+            case building
+            case unknown
+        }
+        
         var name: String
         var status: Status
         var url: String

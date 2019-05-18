@@ -21,7 +21,7 @@ class MainPresenter: Presenter {
     }
 
 
-    var jobs: Jobs?
+    var jobs: JobsViewModel?
 
     func loadIfRequired() {
 

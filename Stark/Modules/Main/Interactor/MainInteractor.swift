@@ -30,7 +30,7 @@ class MainInteractor: Interactor {
     ///
     /// - Parameters:
     ///   - completion: Completion block, called on request completion.
-    func fetchData(completion: @escaping (Result<Jobs>) -> Void) {
+    func fetchData(completion: @escaping (Result<JobsViewModel>) -> Void) {
 
         guard task == nil || task?.isRunning == false else {
             return
@@ -39,7 +39,13 @@ class MainInteractor: Interactor {
         do {
 
             task = try request { result in
-                completion(result)
+                switch result {
+                case .success(let value):
+                    completion(.success(JobsViewModelFactory(jobs: value).make()))
+
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
 
             task?.resume() // Resume task
