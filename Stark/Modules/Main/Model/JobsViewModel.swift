@@ -40,8 +40,16 @@ struct JobsViewModel {
         var name: String
         var status: Status
 
-        var statusColor: UIColor {
+        var pulsingViewColor: UIColor {
             return status.color
+        }
+
+        var statusViewColor: UIColor {
+            if status == .building {
+                return .white
+            } else {
+                return pulsingViewColor
+            }
         }
 
         var shouldAnimateStatus: Bool {

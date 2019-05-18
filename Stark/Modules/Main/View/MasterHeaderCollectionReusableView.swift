@@ -1,5 +1,5 @@
 //
-//  MasterJobCollectionViewCell.swift
+//  MasterHeaderCollectionReusableView.swift
 //  Stark
 //
 //  Created by Melvin John on 18/05/2019.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MasterJobCollectionViewCell: UICollectionViewCell {
+class MasterHeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet weak var pulsingView: UIView!
-    @IBOutlet weak var jobNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusView: UIView!
 
     override var bounds: CGRect {
@@ -52,6 +52,4 @@ class MasterJobCollectionViewCell: UICollectionViewCell {
         pulsingView.layer.removeAllAnimations()
         pulsingView.alpha = 1
     }
-
 }
-

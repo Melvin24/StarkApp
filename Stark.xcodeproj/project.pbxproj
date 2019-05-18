@@ -16,14 +16,14 @@
 		E176067F228EC1A700C59587 /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176067E228EC1A700C59587 /* CollectionViewDelegate.swift */; };
 		E1760681228EC1B000C59587 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1760680228EC1B000C59587 /* CollectionViewDataSource.swift */; };
 		E1760684228EC33F00C59587 /* MainViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1760683228EC33F00C59587 /* MainViewControllerFactory.swift */; };
-		E1760687228EC70D00C59587 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */; };
-		E1760689228EC71400C59587 /* JobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1760688228EC71400C59587 /* JobCollectionViewCell.xib */; };
 		E176068B228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */; };
 		E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */; };
 		E17606DB22901FDE00C59587 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606DA22901FDE00C59587 /* Colors.swift */; };
-		E17606FB2290250E00C59587 /* MasterJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */; };
-		E17606FD2290251D00C59587 /* MasterJobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */; };
+		E17606FD2290251D00C59587 /* JobCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17606FC2290251D00C59587 /* JobCollectionViewCell.xib */; };
 		E17606FF2290907400C59587 /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17606FE2290907400C59587 /* JobsViewModel.swift */; };
+		E176070122909D4B00C59587 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176070022909D4B00C59587 /* JobCollectionViewCell.swift */; };
+		E176070322909D8500C59587 /* MasterHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176070222909D8500C59587 /* MasterHeaderCollectionReusableView.swift */; };
+		E176070522909D9C00C59587 /* MasterHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E176070422909D9C00C59587 /* MasterHeaderCollectionReusableView.xib */; };
 		E1A42398228B37B70069774A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42397228B37B70069774A /* AppDelegate.swift */; };
 		E1A423A2228B37BA0069774A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A423A0228B37BA0069774A /* LaunchScreen.storyboard */; };
 		E1A423AD228B37BB0069774A /* StarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A423AC228B37BB0069774A /* StarkTests.swift */; };
@@ -77,14 +77,14 @@
 		E176067E228EC1A700C59587 /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
 		E1760680228EC1B000C59587 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		E1760683228EC33F00C59587 /* MainViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerFactory.swift; sourceTree = "<group>"; };
-		E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
-		E1760688228EC71400C59587 /* JobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobCollectionViewCell.xib; sourceTree = "<group>"; };
 		E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		E17606DA22901FDE00C59587 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterJobCollectionViewCell.swift; sourceTree = "<group>"; };
-		E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterJobCollectionViewCell.xib; sourceTree = "<group>"; };
+		E17606FC2290251D00C59587 /* JobCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobCollectionViewCell.xib; sourceTree = "<group>"; };
 		E17606FE2290907400C59587 /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
+		E176070022909D4B00C59587 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
+		E176070222909D8500C59587 /* MasterHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E176070422909D9C00C59587 /* MasterHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		E1A42394228B37B70069774A /* Stark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A42397228B37B70069774A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A423A1228B37BA0069774A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,12 +185,12 @@
 		E1760685228EC6F000C59587 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E1760686228EC70D00C59587 /* JobCollectionViewCell.swift */,
-				E1760688228EC71400C59587 /* JobCollectionViewCell.xib */,
 				E176068A228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift */,
 				E176068C228EDFA700C59587 /* JobHeaderCollectionReusableView.xib */,
-				E17606FA2290250E00C59587 /* MasterJobCollectionViewCell.swift */,
-				E17606FC2290251D00C59587 /* MasterJobCollectionViewCell.xib */,
+				E176070022909D4B00C59587 /* JobCollectionViewCell.swift */,
+				E17606FC2290251D00C59587 /* JobCollectionViewCell.xib */,
+				E176070222909D8500C59587 /* MasterHeaderCollectionReusableView.swift */,
+				E176070422909D9C00C59587 /* MasterHeaderCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,8 +540,8 @@
 				E176068D228EDFA700C59587 /* JobHeaderCollectionReusableView.xib in Resources */,
 				E1A4240C228B4DA30069774A /* LoadingView.xib in Resources */,
 				E1A4240D228B4DA30069774A /* ErrorView.xib in Resources */,
-				E1760689228EC71400C59587 /* JobCollectionViewCell.xib in Resources */,
-				E17606FD2290251D00C59587 /* MasterJobCollectionViewCell.xib in Resources */,
+				E17606FD2290251D00C59587 /* JobCollectionViewCell.xib in Resources */,
+				E176070522909D9C00C59587 /* MasterHeaderCollectionReusableView.xib in Resources */,
 				E1A423CD228B39210069774A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +567,7 @@
 				E1A42422228B4DA30069774A /* Interactor.swift in Sources */,
 				E1A423C4228B38850069774A /* Result.swift in Sources */,
 				E1760684228EC33F00C59587 /* MainViewControllerFactory.swift in Sources */,
+				E176070322909D8500C59587 /* MasterHeaderCollectionReusableView.swift in Sources */,
 				E1A42421228B4DA30069774A /* Coordinatable.swift in Sources */,
 				E1A423C3228B38850069774A /* TaskResult.swift in Sources */,
 				E176068B228EDF8E00C59587 /* JobHeaderCollectionReusableView.swift in Sources */,
@@ -580,9 +581,8 @@
 				E1A4240E228B4DA30069774A /* LoadingView.swift in Sources */,
 				E1A42426228B4DA30069774A /* PresenterInteractor.swift in Sources */,
 				E1A423C5228B38850069774A /* CanPerformJobs.swift in Sources */,
-				E1760687228EC70D00C59587 /* JobCollectionViewCell.swift in Sources */,
+				E176070122909D4B00C59587 /* JobCollectionViewCell.swift in Sources */,
 				E1A423C2228B38850069774A /* Waterfall.swift in Sources */,
-				E17606FB2290250E00C59587 /* MasterJobCollectionViewCell.swift in Sources */,
 				E1760681228EC1B000C59587 /* CollectionViewDataSource.swift in Sources */,
 				E17606FF2290907400C59587 /* JobsViewModel.swift in Sources */,
 				E176067F228EC1A700C59587 /* CollectionViewDelegate.swift in Sources */,

@@ -12,11 +12,11 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
 
     /// Helpers
     let lineSpacing: CGFloat = 4
-    let interItemSpacing: CGFloat = 4
-    let numberOfItemsPerRowPortrait: CGFloat = 2
-    let numberOfItemsPerRowLandscape: CGFloat = 3
+    let interItemSpacing: CGFloat = 0
     let sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-    let sectionHeaderHeight: CGFloat = 30
+    let defaultSectionHeaderHeight: CGFloat = 30
+    let masterSectionHeight: CGFloat = 90
+    let cellHeight: CGFloat = 80
 
     /// Current device, used to check for orientation.
     var device = UIDevice.current
@@ -25,12 +25,12 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
 
     /// Asks the delegate for the spacing between successive items in the rows or columns of a section.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return interItemSpacing
     }
 
     /// Asks the delegate for the spacing between successive rows or columns of a section.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return interItemSpacing
+        return lineSpacing
     }
 
     /// Asks the delegate for the margins to apply to content in the specified section.
@@ -39,15 +39,15 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 80)
+        return CGSize(width: collectionView.frame.width, height: cellHeight)
 
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
-            return .zero
+            return CGSize(width: viewController.view.frame.width, height: masterSectionHeight)
         } else {
-            return CGSize(width: viewController.view.frame.width, height: sectionHeaderHeight)
+            return CGSize(width: viewController.view.frame.width, height: defaultSectionHeaderHeight)
         }
     }
 
@@ -58,15 +58,13 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
         guard let jobs = viewController.presenter.jobs,
-            let masterCell = cell as? MasterJobCollectionViewCell else {
+            let masterCell = cell as? JobCollectionViewCell else {
             return
         }
 
         let job: JobsViewModel.JobViewModel
 
         switch indexPath.section {
-        case 0:
-            job = jobs.master
 
         case 1:
             job = jobs.pullRequests[indexPath.row]
@@ -88,11 +86,36 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let masterCell = cell as? MasterJobCollectionViewCell else {
+        guard let masterCell = cell as? JobCollectionViewCell else {
                 return
         }
 
         masterCell.removePulsingViewAnimation()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+
+        guard let jobs = viewController.presenter.jobs,
+            let view = view as? MasterHeaderCollectionReusableView else {
+                return
+        }
+
+        if jobs.master.shouldAnimateStatus {
+            view.animatePulsingView()
+        } else {
+            view.removePulsingViewAnimation()
+        }
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+
+        guard let view = view as? MasterHeaderCollectionReusableView else {
+                return
+        }
+
+        view.removePulsingViewAnimation()
+
     }
 
 }

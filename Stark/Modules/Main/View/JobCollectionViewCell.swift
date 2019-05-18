@@ -2,7 +2,7 @@
 //  JobCollectionViewCell.swift
 //  Stark
 //
-//  Created by Melvin John on 17/05/2019.
+//  Created by Melvin John on 18/05/2019.
 //  Copyright © 2019 melvin. All rights reserved.
 //
 
@@ -10,9 +10,9 @@ import UIKit
 
 class JobCollectionViewCell: UICollectionViewCell {
 
-
-    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var pulsingView: UIView!
     @IBOutlet weak var jobNameLabel: UILabel!
+    @IBOutlet weak var statusView: UIView!
 
     override var bounds: CGRect {
         didSet {
@@ -23,7 +23,9 @@ class JobCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.statusView.layer.masksToBounds = true
+        self.pulsingView.layer.masksToBounds = true
+        self.statusView.backgroundColor = .white
+
     }
 
     override func layoutSubviews() {
@@ -33,22 +35,23 @@ class JobCollectionViewCell: UICollectionViewCell {
     }
 
     func setCircularStatusView() {
-        self.statusView.layer.cornerRadius = CGFloat(roundf(Float(self.statusView.frame.size.width / 2.0)))
+        self.pulsingView.layer.cornerRadius = CGFloat(roundf(Float(self.pulsingView.frame.size.width / 2.0)))
     }
 
-    func animateStatusView() {
+    func animatePulsingView() {
 
         UIView.animate(withDuration: 2.0, delay: 0, options: [.repeat, .autoreverse], animations: {
 
-            self.statusView.alpha = 0
+            self.pulsingView.alpha = 0
 
         }, completion: nil)
 
     }
 
-    func removeStatusViewAnimation() {
-        statusView.layer.removeAllAnimations()
-        statusView.alpha = 1
+    func removePulsingViewAnimation() {
+        pulsingView.layer.removeAllAnimations()
+        pulsingView.alpha = 1
     }
 
 }
+

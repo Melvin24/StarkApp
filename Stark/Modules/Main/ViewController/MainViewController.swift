@@ -23,12 +23,13 @@ class MainViewController: UIViewController, PresenterInteractor, StatusViewPrese
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         collectionView.backgroundColor = Colors.collectionViewBackground
         setupRefreshController(forCollectionView: collectionView)
 
         collectionView.register(nib: JobCollectionViewCell.self)
-        collectionView.register(nib: MasterJobCollectionViewCell.self)
         collectionView.register(nib: JobHeaderCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
+        collectionView.register(nib: MasterHeaderCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
 
         presenter.loadIfRequired()
 

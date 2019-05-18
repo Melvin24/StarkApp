@@ -33,7 +33,7 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         }
 
         if section == 0 {
-            return 1
+            return 0
         } else if section == 1 {
             return jobs.pullRequests.count
         } else if section == 2 {
@@ -50,13 +50,9 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        let cell = collectionView.dequeueReusableCell(type: MasterJobCollectionViewCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(type: JobCollectionViewCell.self, forIndexPath: indexPath)
 
-        if indexPath.section == 0 {
-            cell.statusView.backgroundColor = jobs.master.statusColor
-            setupCell(cell, forJob: jobs.master)
-
-        } else if indexPath.section == 1 {
+        if indexPath.section == 1 {
             cell.statusView.backgroundColor = .white
             setupCell(cell, forJob: jobs.pullRequests[indexPath.row])
 
@@ -74,21 +70,37 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, type: JobHeaderCollectionReusableView.self, forIndexPath: indexPath)
+        guard let jobs = viewController.presenter.jobs else {
+            return UICollectionReusableView()
+        }
 
-            if indexPath.section == 1 {
-                headerView.headerLabel.text = "Pull Requests"
-                headerView.headerLabel.textColor = .white
+        switch (kind, indexPath.section) {
 
-            } else if indexPath.section == 2 {
-                headerView.headerLabel.text = "Releases"
-                headerView.headerLabel.textColor = .white
+        case (UICollectionView.elementKindSectionHeader, 0):
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, type: MasterHeaderCollectionReusableView.self, forIndexPath: indexPath)
+            headerView.nameLabel.text = jobs.master.name
+            headerView.pulsingView.backgroundColor = jobs.master.pulsingViewColor
+            headerView.statusView.backgroundColor = jobs.master.statusViewColor
+            
+            return headerView
 
-            } else {
-                return UICollectionReusableView()
-            }
+
+        case (UICollectionView.elementKindSectionHeader, 1):
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, type: JobHeaderCollectionReusableView.self,
+                                                                             forIndexPath: indexPath)
+
+            headerView.headerLabel.text = "Pull Requests"
+            headerView.headerLabel.textColor = .white
+
+            return headerView
+
+        case (UICollectionView.elementKindSectionHeader, 2):
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, type: JobHeaderCollectionReusableView.self,
+                                                                             forIndexPath: indexPath)
+
+            headerView.headerLabel.text = "Releases"
+            headerView.headerLabel.textColor = .white
+
 
             return headerView
 
@@ -99,10 +111,10 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     }
 
-    func setupCell(_ cell: MasterJobCollectionViewCell, forJob job: JobsViewModel.JobViewModel) {
+    func setupCell(_ cell: JobCollectionViewCell, forJob job: JobsViewModel.JobViewModel) {
 
         cell.jobNameLabel.text = job.name
-        cell.pulsingView.backgroundColor = job.statusColor
+        cell.pulsingView.backgroundColor = job.pulsingViewColor
 
     }
 
